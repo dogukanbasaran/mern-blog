@@ -56,8 +56,8 @@ export default function SignUp() {
     <div className="flex justify-center items-center border py-20">      
         <div className="h-[500px] w-[500px] flex flex-col justify-center">
 
-        <Link to="/" className='self-center whitespace-nowrap text-xl sm:text-2xl font-semibold dark:text-white mb-5'>
-          <span className='px-2 py-1 bg-gradient-to-r from-orange-500  to-pink-500 rounded-lg text-white'>Socio</span>
+        <Link to="/" className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white mb-5'>
+          <span className='px-2 py-1 bg-gradient-to-r from-green-500  to-blue-500 rounded-lg text-white'>Socio</span>
           Blog
         </Link>
 

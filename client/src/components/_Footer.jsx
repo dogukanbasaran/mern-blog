@@ -10,8 +10,8 @@ export default function Footerr() {
       <div className='flex justify-between w-full'>
 
         <div>
-          <Link to="/" className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
-              <span className='px-2 py-1 bg-gradient-to-r from-orange-500  to-pink-500 rounded-lg text-white'>Socio</span>
+          <Link to="/" className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white'>
+              <span className='px-2 py-1 bg-gradient-to-r from-green-500  to-blue-500 rounded-lg text-white'>Socio</span>
               Blog
             </Link>
         </div>
