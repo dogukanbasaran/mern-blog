@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import Posts from './pages/Posts'
 
 import Header from "./components/Header"
+import Footer from "./components/_Footer"
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Route path='dashboard' element={<Dashboard/>}/>
       <Route path='posts' element={<Posts/>}/>
     </Routes>
+    <Footer/>
    </Router>
   )
 }
