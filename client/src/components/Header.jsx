@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header>
-      <Navbar className='border-b-2'>
+      <Navbar className='border-b-2' DarkThemeToggle>
 
         {/* LOGO */} 
        <div className='md:inline-block flex justify-center md:justify-start'>
@@ -50,7 +50,7 @@ export default function Header() {
         ):(
             <div className='inline md:hidden order-first'>
             <Link to="/sign-in">
-              <Button outline color='purple'>Sign In</Button>
+              <Button color='purple'>Sign In</Button>
             </Link>
             </div>
 
@@ -105,7 +105,7 @@ export default function Header() {
              ):(
             <div className='hidden md:inline'>
               <Link to="/sign-in">
-                <Button outline color='purple'>Sign In</Button>
+                <Button color='purple'>Sign In</Button>
               </Link>
             </div>
              )}
