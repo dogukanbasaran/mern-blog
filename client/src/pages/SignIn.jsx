@@ -60,7 +60,7 @@ export default function SignIn() {
   }
 
   return (
-    <div className="flex justify-center items-center border py-20">      
+    <div className="flex justify-center items-center py-20">      
     <div className="h-[500px] w-[500px] flex flex-col justify-center">
 
     <Link to="/" className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white mb-5'>

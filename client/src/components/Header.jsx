@@ -1,9 +1,10 @@
-import {Navbar, TextInput, Button, Dropdown, Avatar} from 'flowbite-react';
+import {Navbar, TextInput, Button, Dropdown, Avatar, ToggleSwitch, DropdownItem, DarkThemeToggle} from 'flowbite-react';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {FaMoon} from 'react-icons/fa';
-import { MdAccountCircle } from "react-icons/md";
 import {Link, useLocation} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {toggleTheme} from '../redux/theme/themeSlice';
+
 
 
 
@@ -55,7 +56,6 @@ export default function Header() {
 
         )}
         
-      
 
         <Navbar.Toggle/>
 
@@ -71,6 +71,12 @@ export default function Header() {
               <Navbar.Link active={path === "/posts"} as={'div'} className='border hover:bg-purple-600 rounded-b-md md:hover:bg-transparent md:rounded-none md:border-none'>
                 <Link to='/posts'>Posts</Link>
               </Navbar.Link>
+            </div>
+
+            <div className='flex justify-center items-center'>
+              <div className='hidden md:inline'>
+                <DarkThemeToggle/>
+              </div>
             </div>
 
             {currentUser ? (
