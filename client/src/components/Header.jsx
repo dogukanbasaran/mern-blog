@@ -1,13 +1,16 @@
-import {Navbar, TextInput, Button} from 'flowbite-react';
+import {Navbar, TextInput, Button, Dropdown, Avatar} from 'flowbite-react';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {FaMoon} from 'react-icons/fa';
 import { MdAccountCircle } from "react-icons/md";
 import {Link, useLocation} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+
 
 
 export default function Header() {
 
   const path = useLocation().pathname;
+  const {currentUser} = useSelector(state => state.user);
 
   return (
     <header>
@@ -21,13 +24,37 @@ export default function Header() {
           </Link>
        </div>
 
+        {currentUser ? (
+          <div className='inline md:hidden order-first'>
+              <Dropdown 
+                outline 
+                color='purple'
+                arrowIcon={false}
+                inline
+                label={
+                  <Avatar alt='user' img={currentUser.profilePicture} rounded/>
+                }
+              >
+                <Dropdown.Header>
+                  <span className='font-bold text-[16px]'>{currentUser.username}</span>
+                </Dropdown.Header>
+                <Link to={"/dashboard?tab=profile"}>
+                  <Dropdown.Item className='text-[16px]'>Profile</Dropdown.Item>
+                </Link>
+                <Dropdown.Divider/>
+                <Dropdown.Item className='text-[16px]'>Sign out</Dropdown.Item>
 
-        <div className='inline md:hidden order-first'>
-              <Link to="/sign-in">
-                <Button outline color='purple'>Sign In</Button>
-              </Link>
-        </div>
+                </Dropdown>
+          </div>
+        ):(
+            <div className='inline md:hidden order-first'>
+            <Link to="/sign-in">
+              <Button outline color='purple'>Sign In</Button>
+            </Link>
+            </div>
 
+        )}
+        
       
 
         <Navbar.Toggle/>
@@ -46,11 +73,36 @@ export default function Header() {
               </Navbar.Link>
             </div>
 
+            {currentUser ? (
+                  <div className='hidden md:inline'>
+                              <Dropdown 
+                      outline 
+                      color='purple'
+                      arrowIcon={false}
+                      inline
+                      label={
+                        <Avatar alt='user' img={currentUser.profilePicture} rounded/>
+                      }
+                      className='w-[250px]'
+                    >
+                      <Dropdown.Header>
+                        <span className='font-bold text-[16px]'>{currentUser.username}</span>
+                      </Dropdown.Header>
+                      <Link to={"/dashboard?tab=profile"}>
+                        <Dropdown.Item className='text-[16px]'>Profile</Dropdown.Item>
+                      </Link>
+                      <Dropdown.Divider/>
+                      <Dropdown.Item className='text-[16px]'>Sign out</Dropdown.Item>
+
+                      </Dropdown>
+                  </div>
+             ):(
             <div className='hidden md:inline'>
               <Link to="/sign-in">
                 <Button outline color='purple'>Sign In</Button>
               </Link>
             </div>
+             )}
 
             <div className='inline md:hidden mt-4'>
                 <form>
