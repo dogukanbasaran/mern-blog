@@ -87,7 +87,7 @@ export default function SignIn() {
      <span className='mt-5 text-center'>Do not you have an account? <Link to="/sign-up" className='text-blue-700 font-semibold'>Sign Up</Link></span>
      {
       errorMessage && (
-        <Toast className='fixed right-5 bottom-5'>
+        <Toast className='fixed right-5 bottom-5 border-[0.5px] border-white border-opacity-10'>
             <HiExclamation className="h-5 w-5 text-red-600" />
             <div className="pl-4 text-sm font-normal">{errorMessage}</div>
             <Toast.Toggle/>
@@ -97,7 +97,7 @@ export default function SignIn() {
 
     {
      succesMessage && (
-        <Toast className='fixed right-5 bottom-5'>
+        <Toast className='fixed right-5 bottom-5 border-[0.5px] border-white border-opacity-10'>
             <HiCheck className="h-5 w-5 text-green-600" />
             <div className="pl-4 text-sm font-normal">{succesMessage}</div>
             <Toast.Toggle/>
